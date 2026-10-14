@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Tracking | HostelHub</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .parcel-container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .parcel-container h1 {
+            margin-bottom: 10px;
+            color: #172554;
+        }
+
+        .parcel-container p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .parcel-form label {
+            display: block;
+            margin: 16px 0 7px;
+            font-weight: 600;
+        }
+
+        .parcel-form input,
+        .parcel-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .parcel-form button {
+            margin-top: 24px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .parcel-form button:hover {
+            background: #1d4ed8;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="parcel-container">
+        <h1>Parcel Tracking</h1>
+        <p>Register and track hostel parcels in one place.</p>
+
+        <form class="parcel-form" action="/submit-parcel" method="POST">
+            <label for="student">Student Name</label>
+            <input type="text" id="student" name="student"
+                   maxlength="50" required>
+
+            <label for="parcelId">Parcel ID</label>
+            <input type="text" id="parcelId" name="parcelId"
+                   maxlength="30" required>
+
+            <label for="courier">Courier Company</label>
+            <input type="text" id="courier" name="courier"
+                   maxlength="50" required>
+
+            <label for="arrivalDate">Arrival Date</label>
+            <input type="date" id="arrivalDate" name="arrivalDate"
+                   required>
+
+            <label for="status">Parcel Status</label>
+            <select id="status" name="status" required>
+                <option value="Pending">Pending</option>
+                <option value="Arrived">Arrived</option>
+                <option value="Collected">Collected</option>
+            </select>
+
+            <button type="submit">Save Parcel Details</button>
+        </form>
+
+        <a class="back-link" href="/">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

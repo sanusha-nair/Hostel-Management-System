@@ -1,0 +1,119 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints Management | HostelHub</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .complaint-container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .complaint-container h1 {
+            color: #172554;
+            margin-bottom: 10px;
+        }
+
+        .complaint-container p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .complaint-form label {
+            display: block;
+            margin: 16px 0 7px;
+            font-weight: 600;
+        }
+
+        .complaint-form input,
+        .complaint-form select,
+        .complaint-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .complaint-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .complaint-form button {
+            margin-top: 24px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .complaint-form button:hover {
+            background: #1d4ed8;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="complaint-container">
+        <h1>Complaints Management</h1>
+        <p>Submit a hostel complaint and record its priority.</p>
+
+        <form class="complaint-form"
+              action="/submit-complaint" method="POST">
+
+            <label for="student">Student Name</label>
+            <input type="text" id="student" name="student"
+                   maxlength="50" required>
+
+            <label for="room">Room Number</label>
+            <input type="text" id="room" name="room"
+                   maxlength="20" required>
+
+            <label for="category">Complaint Category</label>
+            <select id="category" name="category" required>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Food">Food</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="description">Complaint Description</label>
+            <textarea id="description" name="description"
+                      maxlength="300" required></textarea>
+
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+
+        <a class="back-link" href="/">← Back to Dashboard</a>
+    </div>
+</body>
+</html>
+```

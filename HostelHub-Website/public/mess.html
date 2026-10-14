@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management | HostelHub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mess-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #ececf4;
+            max-width: 650px;
+            margin-top: 28px;
+        }
+
+        .mess-panel label {
+            display: block;
+            margin: 20px 0 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .mess-panel input,
+        .mess-panel select,
+        .mess-panel textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dfe1eb;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .mess-panel textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            margin-top: 22px;
+            padding: 13px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #6b63d9;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #5148c0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #6b63d9;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>HostelHub</h2>
+        <p class="tagline">HOSTEL SERVICES</p>
+        <nav>
+            <a href="/">Dashboard</a>
+            <a class="active" href="/mess.html">Mess Management</a>
+            <a href="/">Parcel Tracking</a>
+            <a href="/">Complaints</a>
+        </nav>
+        <p class="sidebar-footer">Your hostel, simplified.</p>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">FOOD SERVICES</p>
+                <h1>Mess Management</h1>
+                <p class="subtitle">Share your feedback and help improve hostel meals.</p>
+            </div>
+            <div class="profile">H</div>
+        </header>
+
+        <section class="mess-panel">
+            <h2>Meal Feedback</h2>
+            <p class="subtitle">Tell us about your dining experience.</p>
+
+            <form action="/submit-feedback" method="POST">
+                <label for="student">Student name</label>
+                <input type="text" id="student" name="student"
+                       maxlength="50" required>
+
+                <label for="meal">Meal</label>
+                <select id="meal" name="meal" required>
+                    <option value="">Select a meal</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+
+                <label for="rating">Food rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Choose a rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="1">1 - Very poor</option>
+                </select>
+
+                <label for="feedback">Comments</label>
+                <textarea id="feedback" name="feedback"
+                          maxlength="300"
+                          placeholder="Share your suggestions..."></textarea>
+
+                <button class="submit-btn" type="submit">
+                    Submit Feedback
+                </button>
+            </form>
+        </section>
+
+        <a class="back-link" href="/">← Back to Dashboard</a>
+    </main>
+</body>
+</html>
